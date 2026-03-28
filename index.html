@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamInsight - Exam Preparation Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <h1>ExamInsight</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#syllabus" class="nav-link" data-section="syllabus">Syllabus</a></li>
+                    <li><a href="#mock" class="nav-link" data-section="mock">Mock Exam</a></li>
+                    <li><a href="#resources" class="nav-link" data-section="resources">Resources</a></li>
+                    <li><a href="#calendar" class="nav-link" data-section="calendar">Calendar</a></li>
+                    <li><a href="#dashboard" class="nav-link" data-section="dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Welcome to ExamInsight</h2>
+                <p>Your Complete Exam Preparation Companion</p>
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <span class="feature-icon">📖</span>
+                        <h3>Explore Syllabus</h3>
+                        <p>Comprehensive exam syllabi organized by topics</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">✍️</span>
+                        <h3>Mock Exams</h3>
+                        <p>Practice with realistic exam questions</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📚</span>
+                        <h3>Study Materials</h3>
+                        <p>Curated resources for effective learning</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📅</span>
+                        <h3>Exam Calendar</h3>
+                        <p>Never miss an important exam date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Syllabus Explorer Section -->
+        <section id="syllabus" class="section">
+            <div class="section-header">
+                <h2>📖 Exam Syllabus Explorer</h2>
+                <p>Browse and organize your exam topics</p>
+            </div>
+            <div class="syllabus-container">
+                <div class="syllabus-header-actions">
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-exam="all">All Exams</button>
+                        <button class="filter-btn" data-exam="jee">JEE Main</button>
+                        <button class="filter-btn" data-exam="neet">NEET</button>
+                        <button class="filter-btn" data-exam="upsc">UPSC</button>
+                        <button class="filter-btn" data-exam="gate">GATE</button>
+                    </div>
+                    <button id="addSyllabusBtn" class="btn btn-primary">+ Add Syllabus</button>
+                </div>
+                <div class="syllabus-list">
+                    <div class="syllabus-item" data-exam="jee" data-predefined="physics">
+                        <div class="syllabus-header">
+                            <h3>Physics</h3>
+                            <span class="progress-bar"><span class="progress" style="width: 0%"></span></span>
+                            <span class="progress-text">0%</span>
+                        </div>
+                        <div class="topics">
+                            <span class="topic-tag" data-topic="Mechanics">Mechanics</span>
+                            <span class="topic-tag" data-topic="Thermodynamics">Thermodynamics</span>
+                            <span class="topic-tag" data-topic="Optics">Optics</span>
+                            <span class="topic-tag" data-topic="Electricity">Electricity</span>
+                            <span class="topic-tag" data-topic="Magnetism">Magnetism</span>
+                        </div>
+                    </div>
+                    <div class="syllabus-item" data-exam="jee" data-predefined="chemistry">
+                        <div class="syllabus-header">
+                            <h3>Chemistry</h3>
+                            <span class="progress-bar"><span class="progress" style="width: 0%"></span></span>
+                            <span class="progress-text">0%</span>
+                        </div>
+                        <div class="topics">
+                            <span class="topic-tag" data-topic="Organic Chemistry">Organic Chemistry</span>
+                            <span class="topic-tag" data-topic="Inorganic Chemistry">Inorganic Chemistry</span>
+                            <span class="topic-tag" data-topic="Physical Chemistry">Physical Chemistry</span>
+                            <span class="topic-tag" data-topic="Biomolecules">Biomolecules</span>
+                        </div>
+                    </div>
+                    <div class="syllabus-item" data-exam="neet" data-predefined="biology">
+                        <div class="syllabus-header">
+                            <h3>Biology</h3>
+                            <span class="progress-bar"><span class="progress" style="width: 0%"></span></span>
+                            <span class="progress-text">0%</span>
+                        </div>
+                        <div class="topics">
+                            <span class="topic-tag" data-topic="Cell Biology">Cell Biology</span>
+                            <span class="topic-tag" data-topic="Genetics">Genetics</span>
+                            <span class="topic-tag" data-topic="Ecology">Ecology</span>
+                            <span class="topic-tag" data-topic="Human Physiology">Human Physiology</span>
+                            <span class="topic-tag" data-topic="Plant Physiology">Plant Physiology</span>
+                        </div>
+                    </div>
+                    <div class="syllabus-item" data-exam="upsc" data-predefined="history">
+                        <div class="syllabus-header">
+                            <h3>History & Culture</h3>
+                            <span class="progress-bar"><span class="progress" style="width: 0%"></span></span>
+                            <span class="progress-text">0%</span>
+                        </div>
+                        <div class="topics">
+                            <span class="topic-tag" data-topic="Ancient India">Ancient India</span>
+                            <span class="topic-tag" data-topic="Medieval India">Medieval India</span>
+                            <span class="topic-tag" data-topic="Modern India">Modern India</span>
+                            <span class="topic-tag" data-topic="World History">World History</span>
+                        </div>
+                    </div>
+                    <div class="syllabus-item" data-exam="gate" data-predefined="cs">
+                        <div class="syllabus-header">
+                            <h3>Data Structures</h3>
+                            <span class="progress-bar"><span class="progress" style="width: 0%"></span></span>
+                            <span class="progress-text">0%</span>
+                        </div>
+                        <div class="topics">
+                            <span class="topic-tag" data-topic="Arrays & Lists">Arrays & Lists</span>
+                            <span class="topic-tag" data-topic="Trees & Graphs">Trees & Graphs</span>
+                            <span class="topic-tag" data-topic="Sorting">Sorting</span>
+                            <span class="topic-tag" data-topic="Searching">Searching</span>
+                            <span class="topic-tag" data-topic="Dynamic Programming">Dynamic Programming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Syllabus Modal -->
+            <div id="addSyllabusModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add New Syllabus</h3>
+                        <span class="modal-close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addSyllabusForm">
+                            <div class="form-group">
+                                <label for="syllabusExam">Exam Type</label>
+                                <select id="syllabusExam" required>
+                                    <option value="">Select Exam</option>
+                                    <option value="jee">JEE Main</option>
+                                    <option value="neet">NEET</option>
+                                    <option value="upsc">UPSC</option>
+                                    <option value="gate">GATE</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="syllabusSubject">Subject Name</label>
+                                <input type="text" id="syllabusSubject" placeholder="e.g., Mathematics, Physics, Biology" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="syllabusTopics">Topics (comma-separated)</label>
+                                <textarea id="syllabusTopics" placeholder="e.g., Algebra, Calculus, Trigonometry" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="syllabusProgress">Initial Progress (%)</label>
+                                <input type="number" id="syllabusProgress" min="0" max="100" value="0" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelAddSyllabus">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Add Syllabus</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mock Exam Interface Section -->
+        <section id="mock" class="section">
+            <div class="section-header">
+                <h2>✍️ Mock Exam Interface</h2>
+                <p>Practice with real exam questions</p>
+            </div>
+            <div class="mock-exam-container">
+                <div class="exam-selector">
+                    <select id="examSelect" class="exam-select">
+                        <option value="">Select an Exam</option>
+                        <option value="jee-physics">JEE Main - Physics</option>
+                        <option value="jee-chemistry">JEE Main - Chemistry</option>
+                        <option value="neet-biology">NEET - Biology</option>
+                        <option value="gate-cs">GATE - Computer Science</option>
+                    </select>
+                    <input type="number" id="questionCount" placeholder="Questions" min="5" max="100" value="10" class="question-input">
+                    <button id="startExamBtn" class="btn btn-primary">Start Mock Exam</button>
+                </div>
+
+                <div id="examInterface" class="exam-interface" style="display: none;">
+                    <div class="exam-header">
+                        <div class="timer">
+                            <span class="timer-label">Time Left:</span>
+                            <span id="timer" class="timer-value">00:00</span>
+                        </div>
+                        <div class="question-info">
+                            <span id="questionNumber">Question 1 of 10</span>
+                        </div>
+                        <button id="endExamBtn" class="btn btn-danger">End Exam</button>
+                    </div>
+
+                    <div class="question-panel">
+                        <div id="questionContent" class="question-content">
+                            <h3 id="questionText">Question will appear here</h3>
+                        </div>
+
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="radio" name="answer" value="a">
+                                <span id="optA">Option A</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="b">
+                                <span id="optB">Option B</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="c">
+                                <span id="optC">Option C</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="d">
+                                <span id="optD">Option D</span>
+                            </label>
+                        </div>
+
+                        <div class="exam-controls">
+                            <button id="prevBtn" class="btn btn-secondary">← Previous</button>
+                            <button id="nextBtn" class="btn btn-primary">Next →</button>
+                            <button id="submitExamBtn" class="btn btn-success">Submit Exam</button>
+                        </div>
+                    </div>
+
+                    <div class="question-navigator">
+                        <h4>Questions</h4>
+                        <div id="questionNav" class="question-nav-grid"></div>
+                    </div>
+                </div>
+
+                <div id="examResult" class="exam-result" style="display: none;">
+                    <h3>Your Results</h3>
+                    <div class="result-stats">
+                        <div class="stat">
+                            <span class="stat-label">Score</span>
+                            <span id="finalScore" class="stat-value">0%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Correct</span>
+                            <span id="correctCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Incorrect</span>
+                            <span id="incorrectCount" class="stat-value">0</span>
+                        </div>
+                    </div>
+                    <button id="retakeBtn" class="btn btn-primary">Retake Exam</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Resources Section -->
+        <section id="resources" class="section">
+            <div class="section-header">
+                <h2>📚 Study Resources</h2>
+                <p>Comprehensive learning materials</p>
+            </div>
+            <div class="resources-container">
+                <div class="resource-filter">
+                    <div class="filter-controls">
+                        <input type="text" id="resourceSearch" placeholder="Search resources..." class="search-input">
+                        <select id="resourceType" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="video">Videos</option>
+                            <option value="notes">Notes</option>
+                            <option value="pdf">PDFs</option>
+                            <option value="article">Articles</option>
+                        </select>
+                    </div>
+                    <button id="addResourceBtn" class="btn btn-primary">+ Add Resource</button>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card" data-type="notes" data-predefined="algebra-notes">
+                        <div class="resource-header">
+                            <span class="resource-type-badge">Notes</span>
+                            <span class="resource-difficulty">Beginner</span>
+                        </div>
+                        <h3>Algebra Fundamentals</h3>
+                        <p>Introduction to algebraic concepts and operations</p>
+                        <div class="resource-meta">
+                            <span>📄 8 pages</span>
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Download</button>
+                            <button class="delete-resource-btn" data-resource-id="algebra-notes" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-type="video" data-predefined="calculus-video">
+                        <div class="resource-header">
+                            <span class="resource-type-badge video">Video</span>
+                            <span class="resource-difficulty">Intermediate</span>
+                        </div>
+                        <h3>Calculus Made Easy</h3>
+                        <p>Complete video series on differential and integral calculus</p>
+                        <div class="resource-meta">
+                            <span>🎥 45 minutes</span>
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Watch</button>
+                            <button class="delete-resource-btn" data-resource-id="calculus-video" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-type="pdf" data-predefined="physics-pdf">
+                        <div class="resource-header">
+                            <span class="resource-type-badge pdf">PDF</span>
+                            <span class="resource-difficulty">Advanced</span>
+                        </div>
+                        <h3>Advanced Physics Problems</h3>
+                        <p>100+ solved problems with detailed explanations</p>
+                        <div class="resource-meta">
+                            <span>📕 120 pages</span>
+                            <span>⭐ 4.7/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Download</button>
+                            <button class="delete-resource-btn" data-resource-id="physics-pdf" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-type="article" data-predefined="chemistry-article">
+                        <div class="resource-header">
+                            <span class="resource-type-badge article">Article</span>
+                            <span class="resource-difficulty">Beginner</span>
+                        </div>
+                        <h3>Chemistry Quick Reference</h3>
+                        <p>Key concepts and formulas for organic chemistry</p>
+                        <div class="resource-meta">
+                            <span>📰 6 minutes read</span>
+                            <span>⭐ 4.3/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Read</button>
+                            <button class="delete-resource-btn" data-resource-id="chemistry-article" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-type="video" data-predefined="biology-video">
+                        <div class="resource-header">
+                            <span class="resource-type-badge video">Video</span>
+                            <span class="resource-difficulty">Intermediate</span>
+                        </div>
+                        <h3>Biology Cellular Structures</h3>
+                        <p>Detailed animation and explanation of cell components</p>
+                        <div class="resource-meta">
+                            <span>🎥 32 minutes</span>
+                            <span>⭐ 4.6/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Watch</button>
+                            <button class="delete-resource-btn" data-resource-id="biology-video" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-type="notes" data-predefined="history-notes">
+                        <div class="resource-header">
+                            <span class="resource-type-badge">Notes</span>
+                            <span class="resource-difficulty">Advanced</span>
+                        </div>
+                        <h3>History of Modern India</h3>
+                        <p>Comprehensive notes on independence movement and constitution</p>
+                        <div class="resource-meta">
+                            <span>📄 25 pages</span>
+                            <span>⭐ 4.9/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm">Download</button>
+                            <button class="delete-resource-btn" data-resource-id="history-notes" title="Delete resource">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Resource Modal -->
+            <div id="addResourceModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add New Resource</h3>
+                        <span class="modal-close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addResourceForm">
+                            <div class="form-group">
+                                <label for="resourceTypeSelect">Resource Type</label>
+                                <select id="resourceTypeSelect" required>
+                                    <option value="">Select Type</option>
+                                    <option value="video">Video</option>
+                                    <option value="notes">Notes</option>
+                                    <option value="pdf">PDF</option>
+                                    <option value="article">Article</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="resourceTitle">Title</label>
+                                <input type="text" id="resourceTitle" placeholder="Resource title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="resourceDescription">Description</label>
+                                <textarea id="resourceDescription" placeholder="Brief description of the resource" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="resourceDifficulty">Difficulty Level</label>
+                                <select id="resourceDifficulty" required>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="resourceMeta">Additional Info (optional)</label>
+                                <input type="text" id="resourceMeta" placeholder="e.g., Duration, Pages, Rating">
+                            </div>
+                            <div class="form-group">
+                                <label for="resourceUrl">URL/Link (optional)</label>
+                                <input type="url" id="resourceUrl" placeholder="https://example.com/resource">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelAddResource">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Add Resource</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Calendar Section -->
+        <section id="calendar" class="section">
+            <div class="section-header">
+                <h2>📅 Exam Calendar</h2>
+                <p>Stay updated with important exam dates</p>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="calendar-nav">← Prev</button>
+                    <h3 id="currentMonth">March 2026</h3>
+                    <button id="nextMonth" class="calendar-nav">Next →</button>
+                    <button id="addEventBtn" class="calendar-nav add-event-btn">+ Add Event</button>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                </div>
+
+                <div id="calendarDays" class="calendar-days"></div>
+
+                <div class="upcoming-exams">
+                    <h4>Upcoming Exams</h4>
+                    <div id="upcomingList" class="upcoming-list">
+                        <div class="exam-event">
+                            <div class="event-date">Mar 15</div>
+                            <div class="event-info">
+                                <h5>JEE Main Session 2</h5>
+                                <p>Online examination</p>
+                            </div>
+                        </div>
+                        <div class="exam-event">
+                            <div class="event-date">Mar 25</div>
+                            <div class="event-info">
+                                <h5>NEET Revision Test</h5>
+                                <p>Full length test</p>
+                            </div>
+                        </div>
+                        <div class="exam-event">
+                            <div class="event-date">Apr 08</div>
+                            <div class="event-info">
+                                <h5>GATE 2026</h5>
+                                <p>Computer Science stream</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Event Modal -->
+        <div id="eventModal" class="modal" style="display: none;">
+            <div class="modal-content event-modal">
+                <div class="modal-header">
+                    <div class="modal-icon">
+                        <span class="event-icon">📅</span>
+                    </div>
+                    <div class="modal-title-section">
+                        <h3 id="modalTitle">Add New Event</h3>
+                        <p class="modal-subtitle">Schedule your important exam dates and reminders</p>
+                    </div>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <form id="eventForm" class="event-form">
+                    <div class="form-row">
+                        <div class="form-group title-group">
+                            <label for="eventTitle">
+                                <span class="label-icon">📝</span>
+                                Event Title
+                            </label>
+                            <input type="text" id="eventTitle" placeholder="Enter event title..." required>
+                            <div class="input-hint">Give your event a clear, descriptive name</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group type-group">
+                            <label for="eventType">
+                                <span class="label-icon">🏷️</span>
+                                Event Type
+                            </label>
+                            <div class="type-selector">
+                                <div class="type-option" data-value="exam">
+                                    <span class="type-icon">📚</span>
+                                    <span class="type-label">Exam</span>
+                                </div>
+                                <div class="type-option" data-value="test">
+                                    <span class="type-icon">✏️</span>
+                                    <span class="type-label">Test</span>
+                                </div>
+                                <div class="type-option" data-value="deadline">
+                                    <span class="type-icon">⏰</span>
+                                    <span class="type-label">Deadline</span>
+                                </div>
+                                <div class="type-option" data-value="reminder">
+                                    <span class="type-icon">🔔</span>
+                                    <span class="type-label">Reminder</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="eventType" value="exam">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group date-group">
+                            <label for="eventDate">
+                                <span class="label-icon">📅</span>
+                                Event Date
+                            </label>
+                            <input type="date" id="eventDate" required>
+                            <div class="input-hint">Select the date for this event</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit" id="addEventSubmit" class="submit-btn">
+                            Add Event
+                        </button>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group description-group">
+                            <label for="eventDescription">
+                                <span class="label-icon">📖</span>
+                                Description (Optional)
+                            </label>
+                            <textarea id="eventDescription" rows="3" placeholder="Add any additional details about this event..."></textarea>
+                            <div class="input-hint">Provide more context or preparation notes</div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancelEvent" class="btn-secondary">
+                            <span class="btn-icon">✕</span>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Student Progress Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="section-header">
+                <h2>📊 Student Progress Dashboard</h2>
+                <p>Track your learning journey</p>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h4>Total Study Hours</h4>
+                        <p class="stat-large">156.5</p>
+                        <span class="stat-unit">hours</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Exams Attended</h4>
+                        <p class="stat-large">18</p>
+                        <span class="stat-unit">mock tests</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Average Score</h4>
+                        <p class="stat-large">78.2</p>
+                        <span class="stat-unit">percent</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Topics Completed</h4>
+                        <p class="stat-large">34</p>
+                        <span class="stat-unit">out of 52</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-charts">
+                    <div class="chart-card">
+                        <h4>Subject-wise Performance</h4>
+                        <div class="chart">
+                            <div class="chart-row">
+                                <span class="chart-label">Physics</span>
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 75%; background: #3498db;"></div>
+                                </div>
+                                <span class="chart-value">75%</span>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">Chemistry</span>
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 82%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="chart-value">82%</span>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">Biology</span>
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 88%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="chart-value">88%</span>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">Mathematics</span>
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 70%; background: #f39c12;"></div>
+                                </div>
+                                <span class="chart-value">70%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h4>Weekly Study Activity</h4>
+                        <div class="activity-chart">
+                            <div class="activity-bar">
+                                <span class="day">Mon</span>
+                                <div class="bar" style="height: 60%;" title="3 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Tue</span>
+                                <div class="bar" style="height: 75%;" title="4 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Wed</span>
+                                <div class="bar" style="height: 50%;" title="2.5 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Thu</span>
+                                <div class="bar" style="height: 85%;" title="4.5 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Fri</span>
+                                <div class="bar" style="height: 70%;" title="3.5 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Sat</span>
+                                <div class="bar" style="height: 95%;" title="5 hours"></div>
+                            </div>
+                            <div class="activity-bar">
+                                <span class="day">Sun</span>
+                                <div class="bar" style="height: 55%;" title="2.75 hours"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-goals">
+                    <h4>Learning Goals</h4>
+                    <div class="goal-item">
+                        <div class="goal-header">
+                            <span>Complete Organic Chemistry</span>
+                            <span class="goal-progress">65%</span>
+                        </div>
+                        <div class="goal-bar">
+                            <div class="goal-bar-fill" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-header">
+                            <span>Practice 50 Mock Exams</span>
+                            <span class="goal-progress">36%</span>
+                        </div>
+                        <div class="goal-bar">
+                            <div class="goal-bar-fill" style="width: 36%;"></div>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-header">
+                            <span>Achieve 90% Average Score</span>
+                            <span class="goal-progress">78%</span>
+                        </div>
+                        <div class="goal-bar">
+                            <div class="goal-bar-fill" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h4>Recent Activity</h4>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-time">Today, 2:30 PM</span>
+                            <span class="activity-desc">Completed mock exam - JEE Physics (Score: 82%)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">Yesterday</span>
+                            <span class="activity-desc">Studied Organic Chemistry - 2 hours</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">March 8, 2026</span>
+                            <span class="activity-desc">Downloaded: Advanced Physics Solutions</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">March 7, 2026</span>
+                            <span class="activity-desc">Completed Biology revision test</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ExamInsight. All rights reserved. | Helping students succeed globally.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
